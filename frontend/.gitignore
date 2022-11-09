@@ -7,6 +7,11 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
+.prettierrc
+vite-env.d.ts
 package-lock.json
 node_modules
 dist
