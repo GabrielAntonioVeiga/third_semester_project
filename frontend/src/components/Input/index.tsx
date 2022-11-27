@@ -1,17 +1,19 @@
-import { InputHTMLAttributes } from "react";
+import {  InputHTMLAttributes } from "react";
+import { IconType } from "react-icons/lib";
+import { InputContainer, StyledInput } from "./style";
 
 interface InputProps  extends InputHTMLAttributes<HTMLInputElement> {
-    label: string;
-    name: Path<FieldValues>;
-    register: UseFormRegister<FieldValues>;
+    icon: JSX.Element;
 }
 
 export default function (props: InputProps) {
     return (
         <>
-        <div>
-            
-        </div>
+        <InputContainer>
+            {props.icon}
+            <StyledInput {...props} />
+            <div className="bar" ></div>
+        </InputContainer>
         </>
     )
 }
