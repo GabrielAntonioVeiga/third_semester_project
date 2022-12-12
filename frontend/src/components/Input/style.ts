@@ -1,61 +1,55 @@
-import styled from "styled-components";
+import styled from "styled-components"
+
 
 export const StyledInput = styled.input`
-    color: var(--middle-blue-green);
-    background-color: var(--white);
-    outline: none;
-    border: none;
+  color: var(--middle-blue-green);
+  background-color: var(--white);
+  outline: none;
+  border: none;
+  position: relative;
+  width: 100%;
+  /* font: inherit; */
+  font-size: 16px;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  
+  &::placeholder {
+    font-size: 16px;
+    color: var(--slate-gray);
+  }
+  `
+
+export const StyledBar = styled.span`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: var(--slate-gray);
+  width: 100%;
+  height: 1px;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: var(--irresistible);
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s;
+  }
+  `
+
+  export const InputContainer = styled.div`
     position: relative;
-
-    /* border-bottom: 2px solid var(--slate-gray); */
-
-    &::placeholder {
-        color: var(--slate-gray);
+    display: flex;
+    align-items: baseline;
+    margin: 0 auto;
+  
+    i {
+      margin-right: 1rem;
     }
-
-    &::after {
-        content: 'afdadf';
-        width: 11rem;
-        height: 3px;
-        background-color: black;
-        display: block;
-        position: absolute; 
-        bottom: 0;
-        left: 0;
-        /* transform: scaleX(0); */
-        transform-origin: left;
-        transition: transform .5s;
+  
+    ${StyledInput}:focus + ${StyledBar}::before {
+      transform: scaleX(1);
     }
-
-    &:focus::after {
-        transform: scaleX(1);
-    }
-
-
-    `;
-    /* :focus .bar {
-        animation-name: toogleColor;
-        animation-duration: 1s;
-        transform-origin: left;
-        animation-fill-mode: forwards;
-    } */
-    
-    /* border-bottom: 2px solid var(--irresistible); */
-    /* @keyframes toogleColor {
-        from {
-            border-bottom: 2px solid var(--slate-gray);
-        }
-        to {
-            border-bottom: 2px solid var(--irresistible);
-        }
-        
-    } */
-
-export const InputContainer = styled.div`
-    margin-bottom: 1rem;
-
-    .bar {
-        height: 3px;
-        width: 11rem;
-    }
-`
+  `

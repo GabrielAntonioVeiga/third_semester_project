@@ -1,17 +1,16 @@
-import { ButtonHTMLAttributes } from "react";
-import { StyledButton } from "./style";
+import { ButtonHTMLAttributes } from "react"
+import { ButtonContainer, StyledButton } from "./style"
 
-interface buttonProps  extends ButtonHTMLAttributes<HTMLButtonElement> {
-    buttonName: string
-    
+interface buttonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  buttonName: string
 }
 
 export default function (props: buttonProps) {
-    return (
-        <>
-        <div>
-            <StyledButton  {...props}> {props.buttonName} </StyledButton>
-        </div>
-        </>
-    )
+  return (
+    <>
+    <ButtonContainer>
+      <StyledButton {...props}> {props.buttonName} </StyledButton>
+    </ButtonContainer>
+    </>
+  )
 }
