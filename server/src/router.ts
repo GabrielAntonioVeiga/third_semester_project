@@ -6,7 +6,7 @@ const router = express.Router();
 router.get("/users", usersController.getAll);
 
 router.post(
-  "/users",
+  "/user/register",
   userMiddleware.validateRegister,
   usersController.createUser
 );

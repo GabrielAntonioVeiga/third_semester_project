@@ -27,7 +27,7 @@ export const StyledButton = styled.button`
 
   &:hover {
     background: linear-gradient(
-      to right,
+      to top,
       var(--irresistible),
       var(--russian-violet)
     );

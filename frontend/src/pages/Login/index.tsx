@@ -5,12 +5,23 @@ import { MdOutlineMail } from "react-icons/md"
 import { AiOutlineUser } from "react-icons/ai"
 import { RiLockPasswordLine } from "react-icons/ri"
 import { useNavigate } from "react-router-dom"
+import { useForm } from "react-hook-form"
+import { UserFormData } from "../../types/user"
+import { useContext } from "react"
+import { UserContext } from "../../contexts/UserContext"
 
 export default function () {
+  const { loginUser } = useContext(UserContext)
+  const { register, handleSubmit } = useForm()
+
   const navigate = useNavigate()
 
   const handleClick = () => {
     navigate("/register")
+  }
+
+  const onSubmit = (data: UserFormData) => {
+    loginUser(data)
   }
   return (
     <>
@@ -18,11 +29,18 @@ export default function () {
         <StyledHeaderContainer>
           <strong>Login</strong>
         </StyledHeaderContainer>
-        <form>
-          <Input icon={<MdOutlineMail color="#aa4465" />} placeholder="Email" />
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Input
+            icon={<MdOutlineMail color="#aa4465" />}
+            placeholder="Email"
+            name="email"
+            register={register}
+          />
           <Input
             icon={<RiLockPasswordLine color="#aa4465" />}
             placeholder="Password"
+            name="password"
+            register={register}
           />
           <Button buttonName="Logar usuário" />
           <span>

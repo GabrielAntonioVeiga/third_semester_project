@@ -19,12 +19,6 @@ const validateRegister = (req: Request, res: Response, next: NextFunction) => {
     return res.status(400).json({ message: "The field user can not be empty" });
   }
 
-  if (!body.id_classes || body.id_classes === "") {
-    return res
-      .status(400)
-      .json({ message: "The field class can not be empty" });
-  }
-
   next();
 };
 

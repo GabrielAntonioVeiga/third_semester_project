@@ -1,17 +1,17 @@
-import {
-  TodoListContext,
-  TodoListContextProvider
-} from "./contexts/TodoListContext"
+import { TodoListContextProvider } from "./contexts/TodoListContext"
+import { UserContextProvider } from "./contexts/UserContext"
 import RoutesApp from "./routes/RoutesApp"
 import GlobalStyles from "./styles/GlobalStyles"
 
 function App() {
   return (
     <>
-      <TodoListContextProvider>
-        <GlobalStyles />
-        <RoutesApp />
-      </TodoListContextProvider>
+      <UserContextProvider>
+        <TodoListContextProvider>
+          <GlobalStyles />
+          <RoutesApp />
+        </TodoListContextProvider>
+      </UserContextProvider>
     </>
   )
 }

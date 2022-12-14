@@ -24,14 +24,19 @@ export const Container = styled.div`
     opacity: 0.4;
   }
 
-  .close-button {
-    border: none;
-    cursor: pointer;
+  span {
     position: absolute;
-    background-color: transparent;
     padding: 3px;
     top: 10px;
     right: 50px;
+  }
+
+  .close-button,
+  .confirm-button {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    padding-left: 5px;
   }
 `
 export const StyledInput = styled.input`
